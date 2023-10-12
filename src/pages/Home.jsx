@@ -31,7 +31,7 @@ const Home = () => {
     return (
         <div className="home">
             <div className="posts">
-                {posts.map((post) => (
+                {posts.length > 0 ? posts.map((post) => (
                     <div className="post" key={post.id}>
                         <div className="content">
                             <Link className="link" to={`/post/${post.id}`}>
@@ -43,7 +43,7 @@ const Home = () => {
                             </Link>
                         </div>
                     </div>
-                ))}
+                )) : <h4>[NO POSTS YET]</h4>}
             </div>
         </div>
     );
